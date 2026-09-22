@@ -4,45 +4,212 @@
     android:background="#090B10" android:fillViewport="true">
     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
         android:orientation="vertical" android:padding="18dp">
-        <TextView android:text="VIDEO CONVERT" android:textSize="26sp" android:textStyle="bold"
-            android:textColor="#FFFFFF" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:text="H.265 • FFmpeg • MediaCodec" android:textSize="13sp"
-            android:textColor="#8EA0B8" android:layout_width="wrap_content" android:layout_height="wrap_content"
-            android:layout_marginBottom="18dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/selectButton" android:text="SELECT VIDEO"
-            android:layout_width="match_parent" android:layout_height="54dp"/>
-        <TextView android:id="@+id/inputText" android:text="No video selected" android:textColor="#B9C4D3"
-            android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="12dp"/>
-        <TextView android:text="OUTPUT CODEC" android:textStyle="bold" android:textColor="#FFFFFF"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
-        <Spinner android:id="@+id/codecSpinner" android:layout_width="match_parent" android:layout_height="52dp"/>
-        <TextView android:text="QUALITY" android:textStyle="bold" android:textColor="#FFFFFF"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
-        <Spinner android:id="@+id/qualitySpinner" android:layout_width="match_parent" android:layout_height="52dp"/>
-        <TextView android:text="BITRATE (8–30 Mbps)" android:textStyle="bold" android:textColor="#FFFFFF"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
-        <SeekBar android:id="@+id/bitrateSeek" android:max="22" android:progress="8"
-            android:layout_width="match_parent" android:layout_height="48dp"/>
-        <TextView android:id="@+id/bitrateText" android:text="16 Mbps" android:textColor="#AFC7FF"
-            android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:text="FPS (30–120)" android:textStyle="bold" android:textColor="#FFFFFF"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
-        <SeekBar android:id="@+id/fpsSeek" android:max="9" android:progress="0"
-            android:layout_width="match_parent" android:layout_height="48dp"/>
-        <TextView android:id="@+id/fpsText" android:text="30 FPS" android:textColor="#AFC7FF"
-            android:textSize="16sp" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
-        <TextView android:text="RESOLUTION" android:textStyle="bold" android:textColor="#FFFFFF"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
-        <Spinner android:id="@+id/resolutionSpinner" android:layout_width="match_parent" android:layout_height="52dp"/>
-        <TextView android:text="AUDIO" android:textStyle="bold" android:textColor="#FFFFFF"
-            android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp"/>
-        <Spinner android:id="@+id/audioSpinner" android:layout_width="match_parent" android:layout_height="52dp"/>
-        <com.google.android.material.button.MaterialButton android:id="@+id/convertButton" android:text="CONVERT"
-            android:layout_width="match_parent" android:layout_height="58dp" android:layout_marginTop="18dp"/>
-        <ProgressBar android:id="@+id/progressBar" style="?android:attr/progressBarStyleHorizontal"
-            android:max="100" android:progress="0" android:layout_width="match_parent" android:layout_height="8dp"
+
+        <TextView
+            android:text="VIDEO CONVERT"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="H.265 • FFmpeg • MediaCodec • AI"
+            android:textSize="13sp"
+            android:textColor="#8EA0B8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/selectButton"
+            android:text="SELECT VIDEO"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"/>
+
+        <TextView
+            android:id="@+id/inputText"
+            android:text="No video selected"
+            android:textColor="#B9C4D3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="14dp"
+            android:background="#111723">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:text="AI SMART OPTIMIZE"
+                    android:textStyle="bold"
+                    android:textSize="17sp"
+                    android:textColor="#FFFFFF"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+                <Switch
+                    android:id="@+id/aiSwitch"
+                    android:checked="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <TextView
+                android:text="On-device AI-style analysis • no cloud required"
+                android:textColor="#8EA0B8"
+                android:textSize="12sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"/>
+
+            <Button
+                android:id="@+id/aiAnalyzeButton"
+                android:text="ANALYZE WITH AI"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"/>
+
+            <TextView
+                android:id="@+id/aiStatus"
+                android:text="Pilih video dan tekan ANALYZE WITH AI."
+                android:textColor="#AFC7FF"
+                android:textSize="13sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="9dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:text="OUTPUT CODEC"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"/>
+
+        <Spinner
+            android:id="@+id/codecSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"/>
+
+        <TextView
+            android:text="QUALITY"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+        <Spinner
+            android:id="@+id/qualitySpinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"/>
+
+        <TextView
+            android:text="BITRATE (8–30 Mbps)"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+        <SeekBar
+            android:id="@+id/bitrateSeek"
+            android:max="22"
+            android:progress="8"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+
+        <TextView
+            android:id="@+id/bitrateText"
+            android:text="16 Mbps"
+            android:textColor="#AFC7FF"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="FPS (30–120)"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+        <SeekBar
+            android:id="@+id/fpsSeek"
+            android:max="9"
+            android:progress="0"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"/>
+
+        <TextView
+            android:id="@+id/fpsText"
+            android:text="30 FPS"
+            android:textColor="#AFC7FF"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="RESOLUTION"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+        <Spinner
+            android:id="@+id/resolutionSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"/>
+
+        <TextView
+            android:text="AUDIO"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"/>
+
+        <Spinner
+            android:id="@+id/audioSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/convertButton"
+            android:text="CONVERT"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_marginTop="18dp"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:max="100"
+            android:progress="0"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
             android:layout_marginTop="14dp"/>
-        <TextView android:id="@+id/statusText" android:text="Ready" android:textColor="#B9C4D3"
-            android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="10dp" android:paddingBottom="18dp"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:text="Ready"
+            android:textColor="#B9C4D3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="18dp"/>
     </LinearLayout>
 </ScrollView>
