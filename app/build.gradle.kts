@@ -6,6 +6,7 @@ plugins {
 android {
     namespace = "com.badru827i.videoconvert"
     compileSdk = 35
+
     defaultConfig {
         applicationId = "com.badru827i.videoconvert"
         minSdk = 24
@@ -13,7 +14,23 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
-    buildFeatures { buildConfig = true }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
+    buildFeatures {
+        buildConfig = true
+    }
+}
+
+kotlin {
+    jvmToolchain(17)
 }
 
 dependencies {
